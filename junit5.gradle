@@ -1,7 +1,12 @@
 junitPlatform {
     filters {
+
         tags {
             //include 'fast'
+        }
+
+        engines {
+            include 'spek'
         }
     }
 }
