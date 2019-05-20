@@ -1,7 +1,4 @@
-/**
- * Created by Hervé Darritchon on 18/06/2018.
- *
- */
+package com.orange.kata
 
 class Sample {
 

@@ -1,11 +1,10 @@
+package com.orange.kata
+
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
-/**
- * Created by Hervé Darritchon on 18/06/2018.
- */
 class SampleTest {
 
     companion object {
@@ -27,6 +26,16 @@ class SampleTest {
         println("A simple test case.")
 
         val numberTwo = 2
+
+        // Junit native assertion
         assertEquals(2, numberTwo)
+    }
+
+    @Test
+    fun `a method should return its parameter value`() {
+        val s = Sample().aMethod("a")
+
+        // jAssert assertion example
+        org.assertj.core.api.Assertions.assertThat(s).isEqualTo("a")
     }
 }

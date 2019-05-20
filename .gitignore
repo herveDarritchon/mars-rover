@@ -150,6 +150,3 @@ bin/
 # ##########################
 *.sublime-project
 *.sublime-workspace
-
-# Add exception for gradle wrapper
-!gradle-wrapper.jar
