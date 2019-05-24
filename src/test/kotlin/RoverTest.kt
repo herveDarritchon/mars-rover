@@ -5,10 +5,6 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 
-/**
- * Created by Hervé Darritchon on 2019-05-20.
- *
- */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class RoverTest {
 
