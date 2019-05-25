@@ -2,15 +2,19 @@ package com.orange.kata
 
 data class Rover(val x: Int, val y: Int, val orientation: Orientation) {
 
-    // TODO renommer la fonction sous forme de verbe
-    fun moves(moveOrder: String): Rover {
+    fun move(moveOrder: String): Rover {
         val commands = moveOrder.toList()
         if (commands.isNotEmpty()) {
-            // TODO refactorer de manière de manière explicite la différence entre la recursion et la première commande
-            return this.handleCommand(moveOrder[0]).moves(moveOrder.drop(1))
+            return this
+                    .handleCommand(firstCommand(moveOrder))
+                    .move(remainingCommands(moveOrder))
         }
         return Rover(x, y, orientation)
     }
+
+    private fun remainingCommands(moveOrder: String) = moveOrder.drop(1)
+
+    private fun firstCommand(moveOrder: String) = moveOrder[0]
 
     private fun handleCommand(command: Char): Rover {
         return when (command) {

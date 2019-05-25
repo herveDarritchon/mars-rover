@@ -30,55 +30,55 @@ class RoverTest {
 
     @Test
     fun `a new Rover that don't move should be at (0,0)`() {
-        aNewRover.moves("")
+        aNewRover.move("")
         Assertions.assertThat(aNewRover).isEqualTo(Rover(0, 0, Orientation.North))
     }
 
     @Test
     fun `a new Rover heading 'N' going forward finished at (0,1)`() {
-        val movingRover = aNewRover.moves("f")
+        val movingRover = aNewRover.move("f")
         Assertions.assertThat(movingRover).isEqualTo(Rover(0, 1, Orientation.North))
     }
 
     @Test
     fun `a new Rover heading 'N' going backward finished at (0,-1)`() {
-        val movingRover = aNewRover.moves("b")
+        val movingRover = aNewRover.move("b")
         Assertions.assertThat(movingRover).isEqualTo(Rover(0, -1, Orientation.North))
     }
 
     @Test
     fun `a new Rover heading 'N' turning left finished at (0,0) with orientation 'W'`() {
-        val turningRover = aNewRover.moves("l")
+        val turningRover = aNewRover.move("l")
         Assertions.assertThat(turningRover).isEqualTo(Rover(0, 0, Orientation.West))
     }
 
     @Test
     fun `a new Rover heading 'N' turning right finished at (0,0) with orientation 'E'`() {
-        val turningRover = aNewRover.moves("r")
+        val turningRover = aNewRover.move("r")
         Assertions.assertThat(turningRover).isEqualTo(Rover(0, 0, Orientation.East))
     }
 
     @Test
     fun `a new Rover heading 'N' going forward twice finished at (0,2)`() {
-        val movingRover = aNewRover.moves("ff")
+        val movingRover = aNewRover.move("ff")
         Assertions.assertThat(movingRover).isEqualTo(Rover(0, 2, Orientation.North))
     }
 
     @Test
     fun `a new Rover heading 'N' going backward twice finished at (0,-2)`() {
-        val movingRover = aNewRover.moves("bb")
+        val movingRover = aNewRover.move("bb")
         Assertions.assertThat(movingRover).isEqualTo(Rover(0, -2, Orientation.North))
     }
 
     @Test
     fun `a new Rover heading 'N' turning right thice finished at (0,0) with orientation 'W'`() {
-        val turningRover = aNewRover.moves("rrr")
+        val turningRover = aNewRover.move("rrr")
         Assertions.assertThat(turningRover).isEqualTo(Rover(0, 0, Orientation.West))
     }
 
     @Test
     fun `a new Rover heading 'N' turning left thrice finished at (0,0) with orientation 'E'`() {
-        val turningRover = aNewRover.moves("lll")
+        val turningRover = aNewRover.move("lll")
         Assertions.assertThat(turningRover).isEqualTo(Rover(0, 0, Orientation.East))
     }
 }
